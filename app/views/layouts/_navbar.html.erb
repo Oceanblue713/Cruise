@@ -1,0 +1,11 @@
+<h3>Cruisenewbe</h3>
+<ul>
+  <li>Stories</li>
+  <li>About this site</li>
+  <li>About authors</li>
+  <% if user_signed_in? %>
+    <li>Authors</li>
+    <li>Create story</li>
+    <li><%= link_to 'Signout', destroy_user_session_path, method: :delete %></li>
+  <% end %>
+</ul>
