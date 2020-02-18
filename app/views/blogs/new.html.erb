@@ -1,0 +1,10 @@
+<h3>Create New article</h3>
+<%= form_for(@blog) do |blog| %>
+  <%= blog.label :title, 'Title: ' %>
+  <%= blog.text_field :title %>
+
+  <%= blog.label :content, 'Article: ' %>
+  <%= blog.text_field :content %>
+
+  <%= blog.submit 'Submit' %>
+<% end %>

@@ -1,10 +1,10 @@
-<h3>Cruisenewbe</h3>
+<h3>Cruisenewbie</h3>
 <ul>
   <li>Stories</li>
-  <li>About this site</li>
-  <li>About authors</li>
+  <li><%= link_to 'About this page', about_page_path %></li>
+  <li><%= link_to 'Authors', about_author_path %></li>
   <% if user_signed_in? %>
-    <li>Authors</li>
+    <li>All Authors</li>
     <li>Create story</li>
     <li><%= link_to 'Signout', destroy_user_session_path, method: :delete %></li>
   <% end %>
