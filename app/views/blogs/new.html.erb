@@ -4,7 +4,12 @@
   <%= blog.text_field :title %>
 
   <%= blog.label :content, 'Article: ' %>
-  <%= blog.text_field :content %>
+  <%= blog.text_area :content %>
+
+  <%= blog.label :company, 'Company: ' %>
+  <%= blog.select(:company, raw('<option value="Royal Carribian">Royal Carribian</option>
+                                <option value="carnival">Carnival</option>
+                                <option value="other">Other</option>')) %>
 
   <%= blog.submit 'Submit' %>
 <% end %>
