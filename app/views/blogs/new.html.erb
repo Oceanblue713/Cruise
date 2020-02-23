@@ -1,15 +1,21 @@
 <h3>Create New article</h3>
 <%= form_for(@blog) do |blog| %>
   <%= blog.label :title, 'Title: ' %>
-  <%= blog.text_field :title %>
+  <%= blog.text_field :title %><br />
 
   <%= blog.label :content, 'Article: ' %>
-  <%= blog.text_area :content %>
+  <%= blog.text_area :content %><br />
 
   <%= blog.label :company, 'Company: ' %>
   <%= blog.select(:company, raw('<option value="Royal Carribian">Royal Carribian</option>
                                 <option value="carnival">Carnival</option>
-                                <option value="other">Other</option>')) %>
+                                <option value="other">Other</option>')) %><br />
+  
+  <%= blog.label :ship, 'Ship: '%>
+  <%= blog.text_field :ship %><br />
 
+  <%= blog.label :date, 'Date: '%>
+  <%= blog.date_field :date %><br />
+  
   <%= blog.submit 'Submit' %>
 <% end %>
