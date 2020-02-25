@@ -7,9 +7,10 @@
   <%= blog.text_area :content %><br />
 
   <%= blog.label :company, 'Company: ' %>
-  <%= blog.select(:company, raw('<option value="Royal Carribian">Royal Carribian</option>
-                                <option value="carnival">Carnival</option>
-                                <option value="other">Other</option>')) %><br />
+  <%= blog.select(:company, raw('<option value=""></option>
+                                 <option value="Royal Carribian">Royal Carribian</option>
+                                 <option value="carnival">Carnival</option>
+                                 <option value="other">Other</option>')) %><br />
   
   <%= blog.label :ship, 'Ship: '%>
   <%= blog.text_field :ship %><br />
