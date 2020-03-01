@@ -3,5 +3,8 @@
   <%= blog.title %>
   <%= blog.content %>
   <%= blog.company %>
+  <% if user_signed_in? %>
+    <%= link_to 'Delete', blog, method: :delete %>
+  <% end %>
   <br />
 <% end %>

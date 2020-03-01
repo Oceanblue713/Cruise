@@ -23,9 +23,15 @@ class BlogsController < ApplicationController
     end 
   end
 
+  def destroy 
+    @blog.destroy
+    flash[:success] = 'Article was successfully deleted.'
+    redirect_to(fallback_location: blogs_path)
+  end
+
   private 
 
   def blog_params 
-    params.require(:blog).permit(:title, :content, :company)
+    params.require(:blog).permit(:title, :content, :company, :user_id)
   end
 end
