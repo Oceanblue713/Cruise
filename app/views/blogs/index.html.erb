@@ -4,7 +4,7 @@
   <%= blog.content %>
   <%= blog.company %>
   <% if user_signed_in? %>
-    <%= link_to 'Delete', blog, method: :delete %>
+    <%= link_to "Delete", blog, method: :delete, class: "blog-delete"%>
   <% end %>
   <br />
 <% end %>
