@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   def index 
     @blogs = Blog.all
@@ -24,9 +24,10 @@ class BlogsController < ApplicationController
   end
 
   def destroy 
+    @blog = Blog.find(params[:id])
     @blog.destroy
     flash[:success] = 'Article was successfully deleted.'
-    redirect_to(fallback_location: blogs_path)
+    redirect_to blogs_path
   end
 
   private 

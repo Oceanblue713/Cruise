@@ -34,7 +34,7 @@ body {
  text-decoration: none;
 }
 
-a:link, a:visited {
+.navbar a:link, a:visited {
   color: white;
   text-decoration: none;
 }
