@@ -20,13 +20,25 @@ body {
 
 .logo {
   text-align: center;
+  height: 150px;
 }
 
 .navbar {
-  background-color: blue;  
+  overflow: hidden;
+  background-color: #006fcf;  
   color: white;
   list-style: none;
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+.navbar-inverse {
+  border-color: #006fcf;
+}
+
+.navbar-inverse .navbar-nav li a {
+  color: white;
 }
 
 .navbar a:hover {
@@ -37,4 +49,13 @@ body {
 .navbar a:link, a:visited {
   color: white;
   text-decoration: none;
+}
+
+.btn {
+  border: none;
+  background-color: none;
+}
+
+.btn-primary {
+  background-color: #006fcf;
 }
