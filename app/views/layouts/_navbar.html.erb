@@ -1,17 +1,16 @@
 <div class="logo"><%= image_tag "Cruisenewbie.png" %></div>
-<ul class="navbar">
-  <li><%= link_to 'Stories', blogs_path %></li>
-  <li><%= link_to 'About this page', about_page_path %></li>
-  <li><%= link_to 'Authors', about_author_path %></li>
-  <% if user_signed_in? %>
-    <button class="dropbtn">
-      <%= "#{current_user.email}" %>
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-    </div>
-    <li><%= link_to "Create Article", new_blog_path %></li>
-    <li>All Authors</li>
-    <li><%= link_to 'Signout', destroy_user_session_path, method: :delete %></li>
-  <% end %>
-</ul>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><%= link_to 'Stories', blogs_path %></li>
+      <li><%= link_to 'About this page', about_page_path %></li>
+      <li><%= link_to 'Authors', about_author_path %></li>
+      <% if user_signed_in? %>
+            <li><%= "#{current_user.email}" %></li>
+            <li><%= link_to "Create Article", new_blog_path %></li>
+            <li>All Authors</li>
+            <li><%= link_to 'Signout', destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
