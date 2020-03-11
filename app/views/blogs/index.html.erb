@@ -3,7 +3,9 @@
   <%= blog.title %>
   <%= blog.content %>
   <%= blog.company %>
+  <%= link_to "#{blog.title}", blog_path(blog) %>
   <% if user_signed_in? %>
+    <%= link_to "Edit this article", edit_blog_path(blog)%>
     <%= link_to "Delete", blog, method: :delete, class: "blog-delete"%>
   <% end %>
   <br />
