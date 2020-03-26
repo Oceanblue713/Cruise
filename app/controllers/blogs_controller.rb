@@ -7,6 +7,7 @@ class BlogsController < ApplicationController
 
   def show  
     @blog = Blog.find(params[:id])
+    @user = Blog.left_outer_joins(:user)
   end
 
   def new 
@@ -41,14 +42,18 @@ class BlogsController < ApplicationController
 
   def destroy 
     @blog = Blog.find(params[:id])
-    @blog.destroy
-    flash[:success] = 'Article was successfully deleted.'
-    redirect_to blogs_path
+    if @blog.destroy
+      flash[:success] = 'Article was successfully deleted.'
+      redirect_to blogs_path
+    else  
+      flash[:danger] = 'Article has not been successfully deleted.'
+      render :index
+    end
   end
 
   private 
 
   def blog_params 
-    params.require(:blog).permit(:title, :content, :company, :user_id, :date, :ship)
+    params.require(:blog).permit(:title, :content, :company, :user_id, :date, :ship, :img, :remove_img)
   end
 end

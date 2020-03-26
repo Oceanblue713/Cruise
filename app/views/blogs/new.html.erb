@@ -1,5 +1,18 @@
 <h3>Create New article</h3>
 <%= form_for(@blog) do |blog| %>
+  <%= blog.label :img, 'Image: ' %>
+  <%= blog.file_field :img, id: :blog_img %>
+  <script type="text/javascript">
+  $(function() {
+    function readURL(input) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        
+      }
+    }
+  })
+  </script>
+
   <%= blog.label :title, 'Title: ' %>
   <%= blog.text_field :title %><br />
 
@@ -20,3 +33,4 @@
   
   <%= blog.submit 'Submit' %>
 <% end %>
+<%= link_to 'Back to the Stories', blogs_path %>

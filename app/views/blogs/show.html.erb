@@ -1,5 +1,10 @@
+<%= image_tag @blog.img.url if @blog.img? %>
 <h3><%= @blog.title%></h3>
 <p><%= @blog.date %></p>
 <p><%= @blog.content %></p>
 <p><%= @blog.company %></p>
+<p>Created by<%= @blog.user_id %></p>
+<% if user_signed_in? %>
 <p><%= link_to "Edit this article", edit_blog_path(@blog) %></p>
+<p><%= link_to "Delete this article", @blog, method: :delete, confirm: 'Are you sure?' %></p>
+<% end %>
