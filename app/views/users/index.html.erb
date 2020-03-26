@@ -1,0 +1,7 @@
+<h3>All Authors</h3>
+<% @users.each do |user| %>
+  <ul>
+    <li><%= user.username %></li>
+    <li><%= user.email %></li>
+  </ul>
+<% end %>
